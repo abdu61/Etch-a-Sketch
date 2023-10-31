@@ -22,4 +22,25 @@ main{
     width: 600px;
     height: 600px;
     display: grid;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: black 6px 7px 10px;
 }
+
+.buttons{
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
