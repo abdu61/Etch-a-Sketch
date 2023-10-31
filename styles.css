@@ -2,9 +2,7 @@ body {
     background-color: #000000;
     margin: 0;
     padding: 0;
-    width: 100%;
     height: 100vh;
-    overflow: hidden;
     color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
 }
@@ -52,8 +50,8 @@ main {
 
 .grid {
     display: grid;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     margin: 0;
     padding: 0;
     background-color: #fcfcfc;
