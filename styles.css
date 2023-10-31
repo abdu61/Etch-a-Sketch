@@ -1,46 +1,99 @@
-body{
-    background-color: rgb(151, 234, 255);
+body {
+    background-color: #000000;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
 }
 
-header h1{
+span {
+    position: absolute;
+    pointer-events: none;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: scale(0);
+        filter: blur(0px);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        filter: blur(5px);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(0.8);
+        filter: blur(8px);
+        opacity: 0.8;
+    }
+}
+
+header, .grid, .buttons {
+    z-index: 100;
+}
+
+header h1 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
 }
 
-main{
+main {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px 0px;
 }
 
-.grid{
-    width: 600px;
-    height: 600px;
+.grid {
     display: grid;
+    width: 700px;
+    height: 700px;
     margin: 0;
     padding: 0;
-    background-color: white;
-    box-shadow: black 6px 7px 10px;
+    background-color: #fcfcfc;
 }
 
-.buttons{
+.buttons {
     display: flex;
-    margin-top: 40px;
     gap: 20px;
+    margin-top: 30px;
 }
 
-button{
-    width: 100px;
+button {
+    width: 120px;
     height: 50px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    border: 4px solid teal;
+    border-radius: 6px;
+    font-size: 1.0rem;
+    font-weight: 600;
     cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
 }
 
+button.active {
+    color: #FFFFFF;
+    background-color: teal;
+    border-color: teal;
+}
+
+button:hover {
+    background-color: #000000;
+    color: white;
+    border: 4px solid white;
+}
+
+.btn:nth-child(4), .btn:nth-child(5) {
+    color: rgb(255, 69, 69);
+}
+
+.btn:nth-child(4):hover{
+    background-color: lightcoral;
+    color: whitesmoke;
+}

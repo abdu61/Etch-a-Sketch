@@ -17,6 +17,10 @@ function chooseColor(color) {
     buttonColor.textContent = color;
     buttonColor.classList.add('btn');
     buttonColor.addEventListener('click', () => {
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+        // Add 'active' class to the clicked button
+        buttonColor.classList.add('active');
         grid.onmousedown = grid.onmousemove = e => {
             if (e.buttons === 1) {
                 changeColor(e.target, color);
@@ -75,6 +79,36 @@ function addResizeButton() {
 }
 
 createGrid(16);
-['Color', 'Gray', 'Black'].forEach(chooseColor);
+['Black', 'Gray', 'Color'].forEach(chooseColor);
 clearGrid();
 addResizeButton();
+
+
+
+//Background animation
+// Function to create a span with random properties
+function createSpan() {
+    const span = document.createElement('span');
+    const size = Math.random() * 15;
+
+    span.style.width = size + 'px';
+    span.style.height = size + 'px';
+    span.style.borderRadius = `80%`;
+    span.style.top = Math.random() * innerHeight + "px";
+    span.style.left = Math.random() * innerWidth + "px";
+    span.style.transition = 'all 0.7s ease-out'; 
+    span.style.background = 'white';
+
+    return span;
+}
+
+// Main animation function
+function backgroundAnimation() {
+    const section = document.querySelector('body');
+    const span = createSpan();
+
+    section.appendChild(span);
+    setTimeout(() => {span.remove()}, Math.random() * 4000 + 3000);
+}
+
+setInterval(backgroundAnimation, 150);
